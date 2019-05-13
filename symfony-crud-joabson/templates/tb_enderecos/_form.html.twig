@@ -1,0 +1,38 @@
+{{ form_start(form) }}
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-12">
+                    <div class="form-group">
+                        {{ form_label(form.quadra_endereco, 'Quadra') }}
+                        {{ form_widget(form.quadra_endereco, {'attr': {'class': 'form-control'}, 'required':false}) }}
+                        <small class="text-danger">{{ form_errors(form.quadra_endereco) }}</small>
+                    </div>
+                </div>
+             
+                <div class="col-12">
+                    <div class="form-group">
+                        <label>{{ form_label(form.numero_endereco, 'Numero') }}</label>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                            <div class="input-group-text">R$</div>
+                            </div>
+                            {{ form_widget(form.numero_endereco, {'attr': {'class': 'form-control','data-mask':'000000','data-mask-reverse':'true'}, 'required':false}) }}
+                        </div>
+                        <small class="text-danger">{{ form_errors(form.numero_endereco) }}</small>
+                    </div>
+                </div>
+               <div class="col-12">
+                <div class="form-group">
+                    {{ form_label(form.observacao, 'Observacao') }}
+                    {{ form_widget(form.observacao, {'attr': {'class': 'form-control'}, 'required':false}) }}
+                    <small class="text-danger">{{ form_errors(form.observacao) }}</small>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-success">Salvar</button>
+    </div>
+{{ form_end(form) }}

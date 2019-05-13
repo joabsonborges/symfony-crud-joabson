@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}TbContatos{% endblock %}
+
+{% block body %}
+    <h1>TbContatos</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ tb_contato.id }}</td>
+            </tr>
+            <tr>
+                <th>Cpf</th>
+                <td>{{ tb_contato.cpf }}</td>
+            </tr>
+           
+           <tr>
+                <th>Nome</th>
+                <td>{{ tb_contato.nome }}</td>
+            </tr>
+             <tr>
+                <th>Email</th>
+                <td>{{ tb_contato.email }}</td>
+            </tr>
+            <tr>
+                <th>Telefone</th>
+                <td>{{ tb_contato.telefone }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('tb_contatos _index') }}">back to list</a>
+
+    <a href="{{ path('tb_contatos _edit', {'id': tb_contato.id}) }}">edit</a>
+
+    {{ include('tb_contatos /_delete_form.html.twig') }}
+{% endblock %}
